@@ -6,7 +6,7 @@ A console application that uses Ollama to classify text prompts into binary or t
 
 ### Download Pre-built Binaries (Recommended)
 
-**[📥 Download Latest Release](https://github.com/yourusername/ollama_boolean/releases/latest)**
+**[📥 Download Latest Release](https://github.com/codecaine-zz/ollama_boolean/releases/latest)**
 
 **Supported Platforms:**
 
@@ -19,10 +19,10 @@ A console application that uses Ollama to classify text prompts into binary or t
 
 ```bash
 # One-line installer
-curl -sSL https://raw.githubusercontent.com/yourusername/ollama_boolean/main/install.sh | bash
+curl -sSL https://raw.githubusercontent.com/codecaine-zz/ollama_boolean/main/install.sh | bash
 
 # Or manual download
-curl -L -o ollama_boolean https://github.com/yourusername/ollama_boolean/releases/latest/download/ollama_boolean-linux-x64
+curl -L -o ollama_boolean https://github.com/codecaine-zz/ollama_boolean/releases/latest/download/ollama_boolean-linux-x64
 chmod +x ollama_boolean
 sudo mv ollama_boolean /usr/local/bin/
 ```
@@ -31,7 +31,7 @@ sudo mv ollama_boolean /usr/local/bin/
 
 ```powershell
 # Download from releases page
-Invoke-WebRequest -Uri "https://github.com/yourusername/ollama_boolean/releases/latest/download/ollama_boolean-windows-x64.exe" -OutFile "ollama_boolean.exe"
+Invoke-WebRequest -Uri "https://github.com/codecaine-zz/ollama_boolean/releases/latest/download/ollama_boolean-windows-x64.exe" -OutFile "ollama_boolean.exe"
 ```
 
 ### Or Build from Source

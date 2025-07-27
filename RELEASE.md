@@ -123,8 +123,8 @@ Users can download binaries directly from GitHub releases:
 
 ```bash
 # Example download URLs (replace with actual release version)
-wget https://github.com/yourusername/ollama_boolean/releases/download/v1.0.0/ollama_boolean-linux-x64
-curl -L -o ollama_boolean.exe https://github.com/yourusername/ollama_boolean/releases/download/v1.0.0/ollama_boolean-windows-x64.exe
+wget https://github.com/codecaine-zz/ollama_boolean/releases/download/v1.0.0/ollama_boolean-linux-x64
+curl -L -o ollama_boolean.exe https://github.com/codecaine-zz/ollama_boolean/releases/download/v1.0.0/ollama_boolean-windows-x64.exe
 ```
 
 ### Installation Script
@@ -134,7 +134,7 @@ You could create an installation script:
 ```bash
 #!/bin/bash
 # install.sh
-REPO="yourusername/ollama_boolean"
+REPO="codecaine-zz/ollama_boolean"
 VERSION=$(curl -s https://api.github.com/repos/$REPO/releases/latest | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
 OS=$(uname -s | tr '[:upper:]' '[:lower:]')
 ARCH=$(uname -m)
