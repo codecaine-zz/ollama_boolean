@@ -2,6 +2,40 @@
 
 A console application that uses Ollama to classify text prompts into binary or ternary responses.
 
+## Quick Start
+
+### Download Pre-built Binaries (Recommended)
+
+**[📥 Download Latest Release](https://github.com/yourusername/ollama_boolean/releases/latest)**
+
+**Supported Platforms:**
+
+- Linux (x64): `ollama_boolean-linux-x64`
+- Windows (x64): `ollama_boolean-windows-x64.exe`
+- macOS Intel: `ollama_boolean-macos-x64`
+- macOS Apple Silicon: `ollama_boolean-macos-arm64`
+
+**Quick Install (Linux/macOS):**
+
+```bash
+# One-line installer
+curl -sSL https://raw.githubusercontent.com/yourusername/ollama_boolean/main/install.sh | bash
+
+# Or manual download
+curl -L -o ollama_boolean https://github.com/yourusername/ollama_boolean/releases/latest/download/ollama_boolean-linux-x64
+chmod +x ollama_boolean
+sudo mv ollama_boolean /usr/local/bin/
+```
+
+**Windows:**
+
+```powershell
+# Download from releases page
+Invoke-WebRequest -Uri "https://github.com/yourusername/ollama_boolean/releases/latest/download/ollama_boolean-windows-x64.exe" -OutFile "ollama_boolean.exe"
+```
+
+### Or Build from Source
+
 ## Installation
 
 To install dependencies:

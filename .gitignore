@@ -1,6 +1,19 @@
 # dependencies (bun install)
 node_modules
 
+# Build outputs - cross-platform binaries
+ollama_boolean
+ollama_boolean.exe
+ollama_boolean-arm64
+ollama_boolean-linux-x64
+ollama_boolean-windows-x64.exe
+ollama_boolean-macos-x64
+ollama_boolean-macos-arm64
+
+# Test outputs
+test_binary*
+*_temp
+
 # output
 out
 dist
