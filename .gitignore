@@ -10,6 +10,10 @@ ollama_boolean-windows-x64.exe
 ollama_boolean-macos-x64
 ollama_boolean-macos-arm64
 
+# Release directory and archive
+ollama_boolean_release/
+ollama_boolean_release.zip
+
 # Test outputs
 test_binary*
 *_temp
