@@ -76,6 +76,8 @@ bun run build:linux
 bun run build:mac
 ```
 
+**📖 For more details on cross-platform compilation with Bun, see:** [Bun Build Documentation](https://bun.sh/docs/bundler/executables#cross-compile-to-other-platforms)
+
 ### Using the Compiled Binary
 
 Once compiled, you can run the binary directly without needing Bun installed:
