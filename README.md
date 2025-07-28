@@ -108,6 +108,16 @@ The compiled binary is self-contained and can be:
 sudo cp ollama_boolean /usr/local/bin/
 ```
 
+### GUI Integration
+
+For rapid application development (RAD) with a graphical user interface, you can integrate the compiled binary with **[Neutralino.js](https://neutralino.js.org/docs/api/overview/)**:
+
+- **Subprocess Integration**: Call the `ollama_boolean` binary as a subprocess from your Neutralino.js app
+- **IPC Communication**: Use Inter-Process Communication to exchange data between the GUI and the CLI tool
+- **Cross-Platform**: Deploy your GUI app across Windows, macOS, and Linux using Neutralino's lightweight framework
+
+This allows you to create a modern, cross-platform desktop application while leveraging the existing CLI functionality.
+
 ## Usage
 
 The app classifies user prompts and returns:
