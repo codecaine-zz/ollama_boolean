@@ -3,7 +3,7 @@
 
 set -e
 
-REPO="yourusername/ollama_boolean"
+REPO="codecaine-zz/ollama_boolean"
 INSTALL_DIR="/usr/local/bin"
 BINARY_NAME="ollama_boolean"
 
@@ -27,7 +27,7 @@ echo "Detected Architecture: $ARCH"
 case $OS in
   linux)
     if [[ $ARCH == "x86_64" ]]; then
-      BINARY="ollama_boolean-linux-x64"
+      BINARY="ollama_boolean"
     else
       echo -e "${RED}Error: Unsupported architecture $ARCH for Linux${NC}"
       echo "Supported: x86_64"
@@ -36,9 +36,9 @@ case $OS in
     ;;
   darwin)
     if [[ $ARCH == "arm64" ]]; then
-      BINARY="ollama_boolean-macos-arm64"
+      BINARY="ollama_boolean-arm64"
     elif [[ $ARCH == "x86_64" ]]; then
-      BINARY="ollama_boolean-macos-x64"
+      BINARY="ollama_boolean"
     else
       echo -e "${RED}Error: Unsupported architecture $ARCH for macOS${NC}"
       echo "Supported: arm64, x86_64"
@@ -67,24 +67,42 @@ fi
 
 echo "Latest version: $VERSION"
 
-# Construct download URL
-URL="https://github.com/$REPO/releases/download/$VERSION/$BINARY"
-echo "Download URL: $URL"
+# Construct download URL for the zip file
+ZIP_URL="https://github.com/$REPO/releases/download/$VERSION/ollama_boolean_release.zip"
+echo "Download URL: $ZIP_URL"
 
 # Create temporary directory
 TEMP_DIR=$(mktemp -d)
-TEMP_FILE="$TEMP_DIR/$BINARY"
+ZIP_FILE="$TEMP_DIR/ollama_boolean_release.zip"
+EXTRACT_DIR="$TEMP_DIR/extracted"
 
-echo "Downloading $BINARY..."
-if ! curl -L -o "$TEMP_FILE" "$URL"; then
-  echo -e "${RED}Error: Failed to download binary${NC}"
-  echo "Please check the URL and try again: $URL"
+echo "Downloading ollama_boolean_release.zip..."
+if ! curl -L -o "$ZIP_FILE" "$ZIP_URL"; then
+  echo -e "${RED}Error: Failed to download zip file${NC}"
+  echo "Please check the URL and try again: $ZIP_URL"
   exit 1
 fi
 
 # Verify download
-if [[ ! -f "$TEMP_FILE" ]]; then
+if [[ ! -f "$ZIP_FILE" ]]; then
   echo -e "${RED}Error: Downloaded file not found${NC}"
+  exit 1
+fi
+
+# Extract zip file
+echo "Extracting zip file..."
+mkdir -p "$EXTRACT_DIR"
+if ! unzip -q "$ZIP_FILE" -d "$EXTRACT_DIR"; then
+  echo -e "${RED}Error: Failed to extract zip file${NC}"
+  exit 1
+fi
+
+# Find the binary in the extracted files
+TEMP_FILE="$EXTRACT_DIR/ollama_boolean_release/$BINARY"
+if [[ ! -f "$TEMP_FILE" ]]; then
+  echo -e "${RED}Error: Binary $BINARY not found in zip file${NC}"
+  echo "Available files:"
+  ls -la "$EXTRACT_DIR/ollama_boolean_release/"
   exit 1
 fi
 
